@@ -1,0 +1,26 @@
+<h5 style="margin-top:150px; margin-left:50px">
+     <%= link_to image_tag("plus.png", alt: "Rails"),'main_makeplan' %>
+</h5>
+
+
+
+
+<body>
+        
+        <div class="container">
+        <% @every_plan.each do |p|%>
+        <%= p.title %>
+        <!--<%= link_to image_tag("travelbag.png", alt: "Rails") %>-->
+        <a href="/main_addmemo/<%=p.id%>">
+            <img alt="Rails" src="/assets/travelbag-330808e0a090f7e7448d54db7eabd51459ec9afd98b41b6909d80ba96481cee1.png">
+        </a>
+        
+        <input type="hidden" value="<%= p.id %>" name="idOfPlan">
+         <a href="/destroy/<%= p.id %>">[삭제]</a>
+        
+        <% end %>
+        </div>
+
+   
+</body>
+                            

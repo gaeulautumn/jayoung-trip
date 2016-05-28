@@ -1,0 +1,39 @@
+<head>
+    <style>
+.boxed {
+  border: 1px solid green ;
+}
+</style>
+    
+</head>
+<h5 style="margin-top:150px; margin-left:50px">
+     <a href="main_makememo/<%=@this_ip%>"><img alt="Rails" src="/assets/plus-4d255fe9fe978422c09187782f40044ded58e08757cc01c8adf4e341551c9fcd.png"></a>
+</h5>
+
+
+
+<body>
+    <div class="container">
+    
+    
+        <%= @this_ip %>
+        <% @every_memo.each do |p|%>
+        <div style="float:left">
+       <%= link_to image_tag("plan.png", alt: "Rails") %>
+ <%= p.memotitle %>
+         </div>
+        <% end%>
+        <br>
+   
+            
+                
+                s
+                
+            
+        
+     
+  
+   </div>
+   
+</body> 
+                            

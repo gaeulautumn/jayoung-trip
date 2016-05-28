@@ -1,0 +1,87 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("bimg.jpg");
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #7F7F81;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+#menu {
+	margin-right:500px;
+	width: 980px;
+	height: 46px;
+	padding: 15px 0px 0px;
+    font-family: 'Nanum Pen Script';
+	
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px 0px 0px 4px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 24px;
+	padding: 4px 30px 0px 30px;
+	text-decoration: none;
+	text-shadow: #8A5608 0px 1px 1px;
+    
+	font-size: 20px;
+	font-weight: normal;
+	color: black;
+	border: none;
+}
+#header {
+	width: 980px;
+	height: 63px;
+	margin: 0 auto;
+}
+
+#logo {
+	float: left;
+	width: 660px;
+	height: 63px;
+	background: url(images/img03.jpg) no-repeat left top;
+}
+
+h4 {
+	font-size: 5em;
+	font-family: Arial;
+	margin-left: 350px;
+	color: black;
+}
+
+div.center, p.center, img.center {
+    display: block;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
+
+
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+}
+/*
+  ..
+  *= require nanumfont
+  ..
+*/
+
+
+ 

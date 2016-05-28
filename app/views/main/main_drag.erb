@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>나라 추가하기</title>
+      <link rel="style.css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <style>
+        </style>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+      <div id="draggable">바티칸 <%= link_to image_tag("Italy-Rome-Vatican_1.png", alt: "Rails"),'main_makeplan' %></div>
+        <div id="draggable1">에펠탑 <%= link_to image_tag("France-Paris-Effeltower_1.png", alt: "Rails"),'main_makeplan' %></div>
+          <ul id="myList">
+            <li id="droppable"><%= link_to image_tag("FolderFilled.ico", alt: "Rails"),'main_makeplan' %>폴더</li>
+          </ul>
+          <ul id="myList">
+              <li id="item-1">item 1</li>
+              <li id="item-2">item 2</li>
+          </ul>
+
+<script>
+$(document).ready(function() {
+        $("#draggable").draggable({
+            connectToSortable: 'ul#myList',
+            helper:'clone'
+        });
+        
+        $("#myList").sortable({
+            stop: function(event, ui){
+                //put your AJAX call here
+            }
+        });
+    });
+$( "#draggable1" ).draggable();
+$( "#droppable" ).droppable({
+  drop: function() {
+    alert( "가고 싶은 장소가 추가되었습니다." );
+  }
+});
+</script>
+ 
+</body>
+</html>
