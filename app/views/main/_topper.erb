@@ -2,28 +2,31 @@
 	<div class="row">
 				<ul>
 					<div class="col-md-3 col-xs-3">
-					<li class="current_page_item"><span><%= link_to image_tag("Logo.png", alt: "Rails"),'main_start' %></span></li>
+					<li class="current_page_item"><span><%= link_to image_tag("Logo.png", alt: "Rails"), "/"%></span></li>
 					</div>
 					<div class="col-md-2 col-xs-2">
-					<a href="main_about">About</a>
+						<a href="/jtp2/app/views/main/main_about">About</a>
 					</div>
 					<div class="col-md-2 col-xs-2">
-					<a href="main_contact">Contact</a>
+						<a href="main_contact">Contact</a>
 					</div>
 						 <% if user_signed_in? %>
 						 <div class="col-md-2 col-xs-2">
 		 				  <p>로그인된 이메일 : <%= current_user.email %></p>
 		 				  </div>
-		 				  <div class="col-md-3 col-xs-2">
+		 				 <div class="col-md-2 col-xs-2">
 						  <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }%></p>
 						 </div>
 						 <% else %>
 						 <div class="col-md-2 col-xs-2">
-						  <p><%= link_to "로그인", new_user_session_path%></p>
-						  </div>
-						  <div class="col-md-3 col-xs-3">
+						  <p><%= link_to "로그인", new_user_session_path%></p> 
+						 </div>
+					<!--	 <div class="col-md-3 col-xs-2">
 						  <p><%= link_to "페이스북으로 로그인", user_omniauth_authorize_path(:facebook) %></p>
-			   			 </div>
+			   			 </div> -->
+			   			 <div class="col-md-2 col-xs-2">
+			   			  <p><%= link_to "게시판", 'board_index'%></p>	
+			   			  </div>
 			   			 <% end %>
 		</div>
 </div>			

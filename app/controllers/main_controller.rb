@@ -3,41 +3,47 @@ class MainController < ApplicationController
     end
     
     def main_addplan
-        
           @every_plan = Plan.all  
     end
     
+    def main_makememo
+        @plan_id = params[:id] 
+    end
+    
+    
     def main_addmemo
-      
-         @every_memo=Memo.all
-         @every_memo.each do|p|
-            if p.plan_id==@this_ip
-                 this_memo_ip=Memo.find_by(plan_id:@this_ip)
-                 @this_memo=Memo.find(this_memo_ip.id) 
-            else
-                @this_memo==nil
-            end
-        
-        end
-    
-    
+         @every_memo=Memo.all.order("id desc")
+         @plan_id = params[:id]
+         @memo =  Plan.where(id: params[:id])
+      #   @memo = Memo.new
+      #  memo.memotitle = params[:nameofmemo]
+      #   memo.save
     end
     
-        def plan_write
+    def plan_write
 
-        @plnas = Plan.all
+        @plans = Plan.all.order("id desc") #plnas 오타인가요??
         plan = Plan.new
-        plan.title = params[:nameOfTrip]
-        plan.day = params[:dayOfTrip]
+        plan.title = params[:nameoftrip]
+        plan.day = params[:dayoftrip]
         plan.save
-       redirect_to "/main_addplan" 
+       redirect_to "/main_addplan"
     end
     
-    def destroy
+    def destroy_plan
         @one_dest = Plan.find(params[:plan_id])
         @one_dest.destroy
-        redirect_to "/main_start"
+        redirect_to "/main_addplan"
     end
+  
+    def destroy_memo
+        @two_dest = Memo.find(params[:memo_id])
+        @two_dest.destroy
+        redirect_to "/main_addmemo"
+    end
+    
+  
+        
     
     
     
@@ -45,17 +51,18 @@ class MainController < ApplicationController
         @one_post = Plan.find(params[:plan_id])
         @one_
         redirect_to "/fifth_list"
-     end
+     end  
     
     
     def memo_write
-       @memos = Memo.all
        memo = Memo.new
-       memo.memotitle = params[:nameOfMemo]
-       memo.memocontent = params[:contentOfMemo]
-       memo.plan_id = params[:idOfPlan]
+       memo.memotitle = params[:nameofmemo]
+       memo.memocontent = params[:contentofmemo]
+       memo.plan_id = params[:plan_id]
        memo.save
-       redirect_to "/"
+       redirect_to "/main_addmemo/#{memo.plan_id}"
     end
+   
+  
     
 end
