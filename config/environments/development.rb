@@ -12,8 +12,9 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-  #로그인 잼 설치 devise 가 메일을 
-  #config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  
+  #디바이스 때문에 추가(재철)
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
 
   # Don't care if the mailer can't send.

@@ -1,3 +1,16 @@
+//css 깔끔하게 정리 -> import 시켜서 페이지마다 css 불러올 필요 없어짐
+@import '4-col-portfolio';
+@import 'agency';
+@import 'boards';
+@import 'bootstrap';
+@import 'bootstrap.min';
+@import 'login';
+@import 'main';
+@import 'memo';
+@import 'plan';
+@import 'pop';
+@import 'sign_up';
+@import 'style';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,4 +26,9 @@
  *= require_tree .
  *= require_self
  */
-]
+ 
+ .login_input{
+        margin-top: 10px;
+        width: 260px;
+        text-align: center;
+    }

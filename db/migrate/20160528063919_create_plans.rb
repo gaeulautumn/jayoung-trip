@@ -4,6 +4,7 @@ class CreatePlans < ActiveRecord::Migration
 
       t.string  :title
       t.integer :day
+      t.integer :user_id
     end
   end
 end

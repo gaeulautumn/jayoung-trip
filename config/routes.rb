@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :boards
   get 'board_index' => "boards#index"
-
-  devise_for :installs
-  devise_for :users
   root 'main#main_start'
+  
+  get 'jayoung_practice' => "main#jayoung_practice"
 
 
   get 'main_start' => "main#main_start"
@@ -18,14 +18,19 @@ Rails.application.routes.draw do
 
   get 'main_addmemo(/:id)' => "main#main_addmemo"
   get 'main_makememo(/:id)' => "main#main_makememo"
+  get 'main_memo(/:id)' => "main#main_memo"
   get 'destroy_memo/:memo_id' => "main#destroy_memo"
   post 'memo_write' => "main#memo_write"
+  post 'memo_update/:memo_id' => "main#memo_update"
   
   get 'main_about' => "main#main_about"
   get 'main_contact' => "main#main_contact"
   get 'main_viewmemo' => "main#main_viewmemo"
   
+  get 'board_index' => "board#board_index"
+  get 'main_addplan(/:id)' => "main#main_addplan"
   
+
   
   #가처분 직전 
   get 'main_addmemo/:plan_id' => "main#main_addmemo" 
@@ -33,7 +38,7 @@ Rails.application.routes.draw do
   get '/main_addmemo/main_makememo/:plan_id' => "main#main_makememo"
   get 'main_drag' => "main#main_drag"
   get 'main_trip' => "main#main_trip"
-  
+
   
 #  devise_scope :user do
 #  get "/login" => "devise/sessions#new"

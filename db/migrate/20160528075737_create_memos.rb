@@ -5,6 +5,7 @@ class CreateMemos < ActiveRecord::Migration
       t.string :memotitle
       t.text :memocontent
       t.integer :plan_id
+      t.string :object
     end
   end
 end

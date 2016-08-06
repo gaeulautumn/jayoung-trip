@@ -1,21 +1,73 @@
 <head>
-</head>        
-<body>
-    <div class="wrapper">
-         <header id="header" class="parallax1">
-            <div class="container">
-              <form method="POST" action="/plan_write" style="margin-top:200px; margin-left:350px">
-                   <div class="form-group">
-                    <h5 style:"font-famliy:Arial">
-                           <div class="form-group col-md-6 col-xs-6" style="">
-                              <label for="exampleInputTitle" style="color:white">여행 이름</label><br>
-                              <input type="text" class="form-control" name="nameoftrip" id="exampleInputEmail1" placeholder="제목" style="width:300; height:200" >
-                           </div>
+        <link rel="style.css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
 
-                           <button type="submit" class="btn btn-default">다음</button>
-                    </h5>
-                </div>
-            </form>                      
-        </div>
-    </header>
-</div>
+<% p = Plan.find(params[:id])  %>
+ 
+<div class="container" style="margin-top:100px;">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						<%= current_user.email %>
+					</div>
+					<div class="profile-usertitle-job">
+						Travel
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">환경설정</button>
+					<button type="button" class="btn btn-danger btn-sm">몰라버튼</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-home"></i>
+							여행보기 </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-calendar"></i>
+							일정보기 </a>
+						</li>
+						<li class="active">
+							<a href="#" target="_blank">
+							<i class="glyphicon glyphicon-edit"></i>
+							메모보기 </a>
+						</li>
+							<a href="/main_addplan/<%=p.id%>#">
+						<li>
+							<i class="glyphicon glyphicon-th-large"></i>
+							여행목록으로 돌아가기 </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+          <div class="profile-content">
+<body>
+
+
+ <% p.memos.each do |m| %>
+      <h3>제목</h3><h5><%=m.memotitle%></h5>
+      <h3>내용</h3><h5><%=m.memocontent%></h5>
+    <% end %>
+
+</body>
+          

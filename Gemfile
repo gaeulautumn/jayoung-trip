@@ -13,27 +13,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'devise'     # 회원가입 및 인증
-gem 'rolify'     # role 관리
-gem 'authority'  # 권한설정 123 9.1r
-
-# 페이지 뷰를 깔끔하게 보이도록 하기 위서 아래의 두 젬을 추가로 설치한다.
-gem 'bootstrap-sass'
-gem 'simple_form'
-# facebook 용
-gem 'omniauth-facebook'
-
-# 개발 모드에서 이메일을 보내않고 브라우저에서 미리보기한는 젬
-
-
-gem 'rolify'     # role 관리
-gem 'authority'  # 권한설정
-
-
 gem 'nanumfont-rails' #나눔고딕
 
+#재철이 추가한 것들 -> 디바이스
+gem 'devise'     # 회원가입 및 인증
+gem 'rolify'     # role 관리
+gem 'authority'  # 권한설정
+gem 'omniauth-facebook', '>=1.0.0' #페이스북 로그인
 
-
+gem 'bootstrap-sass'
+gem 'simple_form'
 
 # 개발 모드에서 이메일을 보내않고 브라우저에서 미리보기한는 젬
 gem 'letter_opener', group: :development

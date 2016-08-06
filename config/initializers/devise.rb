@@ -6,8 +6,10 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a29e5a0d2d453d52cd2f3df02aa11fcf5564c0be572bc4aba65f96a824827e3656a2ec101bb7c3b1937d3abc7208e98255ca59c0f9b4e1d86c759277a2cdefff'
-  config.omniauth :facebook, "505405909643918", "2970cde27b3d2d9a6ad4e7d961209d60"
+  # config.secret_key = '83b177907e99546e6430bd60d79928d01940315379df5ba8d1da8efe63c0dbdc5e00fedfbbb13ab2d34db9c44342ad324c302009b28e3615ed3f333bc6bccd83'
+  
+  #페이스북 로그인
+  config.omniauth :facebook, "319382948451328", "bae42b5d93bfcd4b9f9a79d69c49d3b0"
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -25,7 +27,6 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -102,7 +103,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a1204441632e57192934e2810e92f4dca834efa2f24a24c6d31906efe176e89f1981e3790438a6692a359d27591a7727d98b48993f65f19e5dce31b3eee6118a'
+  # config.pepper = '077422d5db054be0e4e3e5304b7efbd622d776c65266dd3c3229703e6a84d2f767304eab55f61e11d52e1a9dd412acb819a3194c34a14ac5472195f7c3d0d1cb'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -237,8 +238,6 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
-  # facebook용
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

@@ -1,17 +1,26 @@
+
+<br><Br><Br><br>
+<div class="card card-container">
+<center>
+<h2>Sign up</h2>
+<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-<div class="container" style="margin-top:200px; margin-left:300px;">
+  
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email, label: false, input_html: { class: "login_input" }, placeholder: 'example@google.com', autofocus: true %>
+    <%= f.input :password, label: false, input_html: { class: "login_input", placeholder: 'Password' } %>
+    <%= f.input :password_confirmation, label: false, input_html: { class: "login_input", placeholder: 'Password Confirm' } %>
   </div>
-
+<br>
+<center>
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
+  </center>
 <% end %>
+ <%= link_to "페이스북 로그인", omniauth_authorize_path(:user, :facebook) %>
 
-<%= render "devise/shared/links" %>
-
-</div>
+<%#= render "devise/shared/links" %>

@@ -1,29 +1,172 @@
 <head>
-    <style>
-.boxed {
-  border: 1px solid green ;
-}
-</style>
-    
+        <link rel="style.css" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
-    <h5 style="margin-top:150px; margin-left:50px">
-         <a href="/main_makememo/<%= @plan_id %>"><img alt="Rails" src="/assets/plus-4d255fe9fe978422c09187782f40044ded58e08757cc01c8adf4e341551c9fcd.png"></a>
-    </h5>
 
-
-
+<% p = Plan.find(params[:id])  %>
+ 
+<div class="container" style="margin-top:100px;">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						<%= current_user.email %>
+					</div>
+					<div class="profile-usertitle-job">
+						Travel
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">환경설정</button>
+					<button type="button" class="btn btn-danger btn-sm">몰라버튼</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-home"></i>
+							여행보기 </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-calendar"></i>
+							일정보기 </a>
+						</li>
+						<li class="active">
+							<a href="#" target="_blank">
+							<i class="glyphicon glyphicon-edit"></i>
+							메모보기 </a>
+						</li>
+						<li>
+							<a href="/main_addplan/<%=p.id%>#">
+							<i class="glyphicon glyphicon-th-large"></i>
+							여행목록으로 돌아가기 </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div> 
+		</div>
+		<div class="col-md-9"> 
+          <div class="profile-content"> 
 <body>
     <div class="container">
         <div style="float:left">
-            <img alt="Rails" src="/assets/memo"></a>
-                    <% @memo.each do |p|%>
-                    title : <%= p.title %>
-            <a href="/destroy_memo/<%= p.id %>">[삭제]</a>
+            <% p.memos.each do |m| %>
+                
+                <% if m.object == "1" %>
+                    <div id="draggable">
+                        <a href="/main_memo/<%= m.id %>">
+                            <div class="container">
+                            	<div class="row">
+                            		<div class="col-md-2 col-sm-6 col-xs-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">                    
+                                                <h1><%=m.memotitle%></h1>
+                                                <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
+                                            </div>
+                                            <div class="panel-footer">Panel footer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <% end %>
+                
+                <% if m.object == "2" %>
+                    <div id="draggable">
+                        <a href="/main_memo/<%= m.id %>">
+                            <div class="container">
+                        	    <div class="row">
+                        		    <div class="col-md-2 col-sm-6 col-xs-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">                    
+                                            <h1><%=m.memotitle%></h1>
+                                            <h5><a href="/destroy_memo/<%= m.id %>">[삭제]</a></h5>
+                                            </div>
+                                            <div class="panel-footer">Panel footer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                <% end %>
+                
+                <% if m.object == "3" %>
+                    <div id="draggable">
+                        <a href="/main_memo/<%= m.id %>">
+                            <div class="container">
+                        	    <div class="row">
+                        		    <div class="col-md-2 col-sm-6 col-xs-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">                    
+                                            <h1><%=m.memotitle%></h1>
+                                            <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
+                                            </div>
+                                            <div class="panel-footer">Panel footer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <% end %>
+            
+            
+            <% end %>
+            <ul id="myList">
+                <li id="droppable">
+                <a href="/main_makememo/<%= @plan_id %>"><img alt="Rails" src="/assets/FolderFilled.ico">폴더</a>
+            </ul>
+            <h5 style="margin-top:7.8%; margin-left:50px">
+          <a href="/main_makememo/<%= @plan_id %>"><img alt="Rails" src="/assets/plus-4d255fe9fe978422c09187782f40044ded58e08757cc01c8adf4e341551c9fcd.png"></a>
+    </h5>
         </div>
-     
-                    <% end %>
-        
-   </div>
-   
-</body> 
+    </div>
+ 
+                            
+                            
+                    
+    <script>
+    $(document).ready(function() {
+            $("#draggable").draggable({
+                connectToSortable: 'ul#myList',
+                
+            });
+            
+            $("#myList").sortable({
+                stop: function(event, ui){
+                    //put your AJAX call here
+                }
+            });
+    });
+    $( "#droppable" ).droppable({
+      drop: function() {
+        alert( "가고 싶은 장소가 추가되었습니다." );
+      }
+    });
+    </script>
+</body>
+
+</div>
+</div>
+</div>
+</div
+                    
+                    
+                            
                             

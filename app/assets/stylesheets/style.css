@@ -31,7 +31,7 @@ body {
 }
 
 #menu a {
-	display: block;
+	disFplay: block;
 	float: left;
 	height: 24px;
 	padding: 4px 30px 0px 30px;
@@ -72,11 +72,13 @@ div.center, p.center, img.center {
 }
 
 
-  #draggable {
+/* #draggable {
     width: 100px;
     height: 100px;
     background: #ccc;
 }
+*/
+
 /*
   ..
   *= require nanumfont
