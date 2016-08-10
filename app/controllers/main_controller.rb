@@ -5,8 +5,8 @@ class MainController < ApplicationController
     end
     
     def main_addplan
-          @every_plan = Plan.all
-          @my_plan= Plan.where(user_id: current_user.id)
+        @every_plan = Plan.all
+        @my_plan= Plan.where(user_id: current_user.id)
     end
     
     def main_makememo
