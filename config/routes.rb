@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
   get 'main_addmemo(/:id)' => "main#main_addmemo"
   get 'main_makememo(/:id)' => "main#main_makememo"
-  get 'main_memo(/:id)' => "main#main_memo"
+  get 'main_memo(/:memo_id)' => "main#main_memo"
   get 'destroy_memo/:memo_id' => "main#destroy_memo"
+  get 'memo_update_view/:memo_id' => "main#memo_update_view"
   post 'memo_write' => "main#memo_write"
   post 'memo_update/:memo_id' => "main#memo_update"
   

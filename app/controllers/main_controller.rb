@@ -25,28 +25,34 @@ class MainController < ApplicationController
     def main_addmemo
          @every_memo=Memo.all.order("id desc")
          @plan_id = params[:id]
-         @memo =  Plan.where(id: params[:id])
+         @plans =  Plan.where(id: params[:id])
+         @memos = Memo.where(plan_id: @plan_id)
       #  @memo = Memo.new
       #  memo.memotitle = params[:nameofmemo]
       #  memo.save
     end
     
     def main_memo
-        @plan_id = params[:id] 
+      #  @plan_id = params[:id] 
      #    @two_dest.memocontent = params[:contentofmemo]
-     #    @memo_id = params[:id]
+        @memo_id = Memo.find(params[:memo_id])
     
     end
 
+
+    def memo_update_view
+        @memo_id = Memo.find(params[:memo_id])
+    end
 
     def memo_update
        @two_dest = Memo.find(params[:memo_id])
        @two_dest.memotitle = params[:nameofmemo]
        @two_dest.memocontent = params[:contentofmemo]
-       @two_dest.plan_id = params[:plan_id]
        @two_dest.object = params[:object]
        @two_dest.save
-       redirect_to "/main_addmemo/#{memo.plan_id}"
+       
+       @plan_id = @two_dest.plan_id
+       redirect_to "/main_addmemo/#{@plan_id}"
     end
 
 
@@ -69,9 +75,9 @@ class MainController < ApplicationController
     end
   
     def destroy_memo
-        @fth_dest = Memo.find(params[:memo_id])
-        @fth_dest.destroy
-        redirect_to "/main_addmemo/:plan_id"
+        memo_id = Memo.find(params[:memo_id])
+        memo_id.destroy
+        redirect_to "/main_addmemo/#{memo_id.plan_id}"
     end
     
  

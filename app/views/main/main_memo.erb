@@ -4,7 +4,6 @@
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 
-<% p = Plan.find(params[:id])  %>
  
 <div class="container" style="margin-top:100px;">
     <div class="row profile">
@@ -49,8 +48,8 @@
 							<i class="glyphicon glyphicon-edit"></i>
 							메모보기 </a>
 						</li>
-							<a href="/main_addplan/<%=p.id%>#">
 						<li>
+							<a href="/main_addplan">
 							<i class="glyphicon glyphicon-th-large"></i>
 							여행목록으로 돌아가기 </a>
 						</li>
@@ -64,10 +63,15 @@
 <body>
 
 
- <% p.memos.each do |m| %>
-      <h3>제목</h3><h5><%=m.memotitle%></h5>
-      <h3>내용</h3><h5><%=m.memocontent%></h5>
-    <% end %>
+
+      <h3>제목</h3><h5><%=@memo_id.memotitle%></h5>
+      <h3>내용</h3><h5><%=@memo_id.memocontent%></h5>
+      
+      <p><a href="/memo_update_view/<%= @memo_id.id %>">[수정]</a></p>
+      <p><a href="/destroy_memo/<%= @memo_id.id %>">[삭제]</a></p>
+
+
+  
 
 </body>
           
