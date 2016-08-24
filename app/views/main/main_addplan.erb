@@ -1,6 +1,6 @@
 <div class="container" style="margin-top:100px;">
     <div class="row profile">
-		<div class="col-md-3">
+		<div class="col-md-3 col-xs-6">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
@@ -51,39 +51,35 @@
 				<!-- END MENU -->
 			</div>
 		</div>
-		<div class="col-md-9">
-<div class="profile-content">
-<body>
-	<!--여행표기-->
-        <div class="container">
+		
+		<div class="col-md-9 col-xs-6">
+			<div class="profile-content">
+			<!--여행표기-->
             <% @my_plan.each do |p| %> <!--count메소드-->
            
-           		<div class="row">
-                                <ul class="thumbnails">
-                                    <div class="col-md-3">
-                                        <div class="thumbnail">
-                                            <img src="http://s1.it.atcdn.net/wp-content/uploads/2015/05/Ultimate-travel-experience-Europe.jpg" width="300" length="200" alt="ALT NAME" class="img-responsive" />
-                                            <div class="caption">
-                                                <h3 align="center"><%=p.title%></h3>
-                                                <p align="center"><%=p.day%>일</p>
-                                                <p align="center"><a href="/main_addmemo/<%=p.id%>" class="btn btn-primary btn-block">Open</a></p>
-                                                <input type="hidden" value="<%= p.id %>" name="idofplan">
-	                	  					 	<p align="center"><a href="/destroy_plan/<%= p.id %>">[삭제]</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ul>
-                </div>
+           		<!--<div class="row">-->
+                        <div class="col-md-3 col-xs-12">
+                            <div class="thumbnail">
+                                <img src="http://s1.it.atcdn.net/wp-content/uploads/2015/05/Ultimate-travel-experience-Europe.jpg" width="300" length="200" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3 align="center"><%=p.title%></h3>
+                                    <p align="center"><%=p.day%>일</p>
+                                    <p align="center"><a href="/main_addmemo/<%=p.id%>" class="btn btn-primary btn-block">Open</a></p>
+                                    <input type="hidden" value="<%= p.id %>" name="idofplan">
+        	  					 	<p align="center"><a href="/destroy_plan/<%= p.id %>">[삭제]</a></p>
+                                </div>
+                            </div>
+                        </div>
+                <!--</div>-->
 		    <%end%>
-        <!--<h5 style="margin-top:7.8%; margin-left:50px">-->
-        <%= link_to image_tag("plus.png", alt: "Rails"), "/main_makeplan/" %>
-	    <!--</h5>-->
-        </div>
-        </div>
+	        <!--<h5 style="margin-top:7.8%; margin-left:50px">-->
+	        <%= link_to image_tag("plus.png", alt: "Rails"), "/main_makeplan/" %>
+		    <!--</h5>-->
+       		 </div>
+		</div>
 	</div>
 </div>
-</div>
-</body>
+
 
 
                             

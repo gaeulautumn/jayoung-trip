@@ -60,27 +60,22 @@
 		</div>
 		<div class="col-md-9"> 
           <div class="profile-content"> 
-<body>
-    <div class="container">
-        <div style="float:left">
-            <% @memos.each do |m| %>
+            <!--<div class="container">-->
+                <!--<div style="float:left">-->
+                <% @memos.each do |m| %>
                 
                 <% if m.object == "호텔" %>
                     <div id="draggable">
                         <a href="/main_memo/<%= m.id %>">
-                            <div class="container">
-                            	<div class="row">
-                            		<div class="col-md-2 col-sm-6 col-xs-6">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">  
-                                                <h5><%=m.object%></h5>
-                                                <h2><%=m.memotitle%></h2>
-                                                <p><a href="/memo_update_view/<%= m.id %>">[수정]</a></p>
-                                                <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
-                                            </div>
-                                            <div class="panel-footer">Panel footer</div>
-                                        </div>
+                    		<div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="panel panel-default">
+                                    <div class="caption">  
+                                        <h5><%=m.object%></h5>
+                                        <h2><%=m.memotitle%></h2>
+                                        <p><a href="/memo_update_view/<%= m.id %>">[수정]</a></p>
+                                        <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
                                     </div>
+                                    <div class="panel-footer">Panel footer</div>
                                 </div>
                             </div>
                         </a>
@@ -90,21 +85,17 @@
                 <% if m.object == "관광지" %>
                     <div id="draggable">
                         <a href="/main_memo/<%= m.id %>">
-                            <div class="container">
-                        	    <div class="row">
-                        		    <div class="col-md-2 col-sm-6 col-xs-6">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">  
-                                            <h5><%=m.object%></h5>
-                                            <h2><%=m.memotitle%></h2>
-                                            <p><a href="/memo_update_view/<%= m.id %>">[수정]</a></p>
-                                            <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
-                                            </div>
-                                            <div class="panel-footer">Panel footer</div>
+                		    <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="panel panel-default">
+                                    <div class="caption">  
+                                        <h5><%=m.object%></h5>
+                                        <h2><%=m.memotitle%></h2>
+                                        <p><a href="/memo_update_view/<%= m.id %>">[수정]</a></p>
+                                        <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
                                     </div>
+                                    <div class="panel-footer">Panel footer</div>
                                 </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                 <% end %>
@@ -112,19 +103,15 @@
                 <% if m.object == "식당" %>
                     <div id="draggable">
                         <a href="/main_memo/<%= m.id %>">
-                            <div class="container">
-                        	    <div class="row">
-                        		    <div class="col-md-2 col-sm-6 col-xs-6">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">    
-                                            <h5><%=m.object%></h5>
-                                            <h2><%=m.memotitle%></h2>
-                                            <p><a href="/memo_update_view/<%= m.id %>">[수정]</a></p>
-                                            <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
-                                            </div>
-                                            <div class="panel-footer">Panel footer</div>
-                                        </div>
+                		    <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">    
+                                        <h5><%=m.object%></h5>
+                                        <h2><%=m.memotitle%></h2>
+                                        <p><a href="/memo_update_view/<%= m.id %>">[수정]</a></p>
+                                        <p><a href="/destroy_memo/<%= m.id %>">[삭제]</a></p>
                                     </div>
+                                    <div class="panel-footer">Panel footer</div>
                                 </div>
                             </div>
                         </a>
@@ -140,8 +127,8 @@
             <h5 style="margin-top:7.8%; margin-left:50px">
           <a href="/main_makememo/<%= @plan_id %>"><img alt="Rails" src="/assets/plus-4d255fe9fe978422c09187782f40044ded58e08757cc01c8adf4e341551c9fcd.png"></a>
     </h5>
-        </div>
-    </div>
+        <!--</div>-->
+    <!--</div>-->
  
                             
                             
@@ -165,12 +152,11 @@
       }
     });
     </script>
-</body>
 
 </div>
 </div>
 </div>
-</div
+</div>
                     
                     
                             

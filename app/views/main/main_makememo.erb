@@ -39,45 +39,4 @@
             $( "#radio" ).buttonset();
         </script>  
 </body>
-          <head>
-</head>        
-<body>
-    
-    <form method="POST" action="/memo_write" style="margin-top:100px; margin-left:300px">
-        <div class="form-group">
-            <h5 style:"font-famliy:Arial">
-                <div class="object">
-                    <input name="memo[object]" type="hidden" value="0" />
-                    <label>호텔</label>
-                    <input  type="checkbox" id="memo_object" name="object" value="1" />
-    
-                    <input name="memo[object]" type="hidden" value="0" />
-                    <label>관광지</label>
-                    <input  type="checkbox" id="memo_object" name="object" value="2" />
-    
-                    <input name="memo[object]" type="hidden" value="0" />
-                    <label>식당</label>
-                    <input  type="checkbox" id="memo_object" name="object" value="3" />
-                </div>            
-
-                <div class="form-group" style="margin-right:450px" >
-                    <label for="exampleInputTitle" style="color:white">제목</label><br>
-                         <input type="text" class="form-control" name="nameofmemo" id="exampleInputEmail1" placeholder="제목"style="width: 400px;height: 50px">
-                </div>
-                
-                <br>
-                <div class="form-group" style="margin-right:450px">
-                    <label for="exampleInputTitle" style="color:white">내용</label><br>
-                        <textarea type="text" class="form-control" name="contentofmemo" id="exampleInputEmail1" placeholder="내용"style="width: 400px;height: 300px"></textarea>
-                </div>
-                
-                <input type="hidden" name="plan_id" value="<%= @plan_id %>">
-                <button type="submit" class="btn btn-default" value="aa">다음</button>
-            </h5>
-        </div>
-    </form>                      
-        <script>
-            $( "#radio" ).buttonset();
-        </script>  
-</body>
-          
+         
